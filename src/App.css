@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+.logo {
+  width: 100px;
+  border-radius: 50%;
+  margin-top: 12px;
+}
+.nav-items ul {
+  display: flex;
+}
+ul li {
+  padding: 20px;
+  margin: 15px;
+  list-style: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+.product {
+  width: 200px;
+  padding: 15px;
+  margin: 17px;
+  border: 2px solid black;
+}
+.product-img {
+  width: 100px;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  width: 160px;
+  height: 40px;
+  background-color: orange;
+  padding: 15px;
+  margin: 10px 0px;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+
+  border: none;
+}
+.super-saver {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.filter-btn{
+  margin: 10px;
+  padding: 5px;
+  background-color: hsla(98, 100%, 60%, 0.904);
+  font-weight: bold;
+  font-size: large;
+ cursor: pointer;
+}
