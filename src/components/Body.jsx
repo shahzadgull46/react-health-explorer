@@ -1,4 +1,4 @@
-import Product from "./Product";
+import Product, { withPreferenceLabel } from "./Product";
 
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -11,11 +11,12 @@ const Body = () => {
 
   const [searchText, setsearchText] = useState("");
 
+  const EnhancedProduct = withPreferenceLabel(Product);
+
   const fetchData = async () => {
     const data = await fetch(
       // for specific fields:
-      "https://world.openfoodfacts.org/api/v2/search?search_terms=yogurt&page_size=50&fields=code,product_name,quantity,brands,categories_tags,labels_tags,allergens,ingredients_analysis_tags,additives_tags,nutriscore_grade,ecoscore_grade,nova_group,origins_tags,manufacturing_places_tags,stores_tags,countries_tags,image_front_small_url",
-
+      "https://world.openfoodfacts.org/api/v2/search?search_terms=yogurt&page_size=50&fields=code,product_name,quantity,brands,categories_tags,labels_tags,allergens,ingredients_analysis_tags,additives_tags,nutriscore_grade,ecoscore_grade,nova_group,origins_tags,manufacturing_places_tags,stores_tags,countries_tags,image_front_small_url,nutriments.sugars_100g,nutriments.proteins_100g",
       // for all fields
       // "https://world.openfoodfacts.org/api/v2/search?search_terms=snacks&page_size=50"
     );
@@ -101,7 +102,9 @@ const Body = () => {
 
       <div className="grid grid-cols-4 gap-3.5 p-7 m-7 bg-slate-200">
         {filteredList.map((product) => {
-          return <Product key={product.code} groData={product} />;
+          //Show default preference per to product card
+
+          return <EnhancedProduct key={product.code} groData={product} />;
         })}
       </div>
     </div>
