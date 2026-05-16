@@ -3,6 +3,9 @@
 This document tracks concepts implemented while building features inside my Grocery App project. Every concept was learned through building actual features instead of isolated examples.
 
 ---
+## 🌐 Live Demo
+Experience the project here:  
+👉 https://react-health-explorer.vercel.app
 
 # 🚀 Features Implemented
 
